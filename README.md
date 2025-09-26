@@ -14,3 +14,15 @@
 ## Первый запуск
 ```bash
 pip install -r requirements.txt
+
+#### 📄 `requirements.txt`
+```txt
+python==3.11
+fastapi
+uvicorn
+pdfplumber
+PyPDF2
+tqdm
+spacy
+psycopg2-binary
+minio
