@@ -1,0 +1,9 @@
+    touch .gitignore
+*.pyc
+.env
+venv/
+*.log
+.DS_Store
+*.pdf
+*.xlsx
+data/
