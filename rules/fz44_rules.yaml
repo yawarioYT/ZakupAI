@@ -1,0 +1,20 @@
+# Правила на основе блок-схемы 
+rules:
+  - id: plan_change_deadline
+    description: "Изменение плана-графика должно быть размещено не позднее чем за 10 дней"
+    article: "ст. 16"
+    condition: "plan_change_date <= event_date - 10"
+
+  - id: notice_deadline_auction
+    description: "Срок подачи заявок на аукцион: не менее 7 дней (НМЦК ≤ 250 тыс.), 15 дней (>250 тыс.)"
+    article: "ст. 63"
+    condition: |
+      if nmc <= 250000:
+          notice_days >= 7
+      else:
+          notice_days >= 15
+
+  - id: contract_signing_delay
+    description: "Контракт заключается не ранее чем через 10 дней после итогов"
+    article: "ст. 83.2"
+    condition: "contract_date >= protocol_date + 10"
